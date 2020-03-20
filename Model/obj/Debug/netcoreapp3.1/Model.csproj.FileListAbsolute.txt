@@ -1,0 +1,11 @@
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.deps.json
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.runtimeconfig.json
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.runtimeconfig.dev.json
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.dll
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.pdb
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.dll
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.pdb
+C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.genruntimeconfig.cache
