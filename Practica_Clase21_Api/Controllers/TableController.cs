@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using System.Threading.Tasks;
+using Common.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Services.Interfaces;
@@ -15,6 +16,7 @@ namespace Practica_Clase21_Api.Controllers
   {
     private ILogger<TableController> _logger;
     private ITableService _tableService;
+
     public TableController(ILogger<TableController> logger, ITableService tableService)
     {
       _logger = logger;
@@ -26,13 +28,26 @@ namespace Practica_Clase21_Api.Controllers
     [HttpGet("GetPersons")]
     public async Task<ActionResult> GetPersons()
     {
-      //Se toman la lista de personas
       var tablePersons = await _tableService.GetPersons();
 
       if (tablePersons == null)
         return Unauthorized("No pudo obtenerse los datos");
 
       return Ok(tablePersons);
+    }
+
+    [HttpPut("AddPerson")]
+    public async Task<ActionResult> AddPerson([FromBody] PersonDTO person)
+    {
+      if (person.FullName != "" || person.Dni != "")
+        return BadRequest("Verifique los datos a enviar");
+
+      var personAdded = await _tableService.AddPerson(person);
+
+      if (personAdded == null)
+        return Unauthorized("No pudo crearse el usuario");
+
+      return Ok(personAdded);
     }
   }
 }

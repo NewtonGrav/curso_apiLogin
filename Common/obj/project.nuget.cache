@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qa+x8f0n821xnJJpn78w3CbKibx6xDKdZxyyyuoq3FO+3RrR2ZqTvoVKCh0a3KHJB54PHypMkJkn6OiUf/SYgA==",
+  "dgSpecHash": "69Fqp6ijvcuR4O0q6P7/wuf4YFMdF/s3jh2hZ3KdxdbelDvTMrkLKv8FtQlHi55vkH9JJQ/xiKM0+rTkyAnCJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gonzalo\\source\\repos\\Practica_Clase21_Api\\Common\\Common.csproj",
+  "projectFilePath": "C:\\Users\\Gonzalo\\Source\\Repos\\curso_apiRestFull\\Common\\Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

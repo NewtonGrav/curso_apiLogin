@@ -12,3 +12,17 @@ C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Services\obj\Debug\netcoreapp
 C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Services\obj\Debug\netcoreapp3.1\Services.csproj.CopyComplete
 C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Services\obj\Debug\netcoreapp3.1\Services.dll
 C:\Users\Gonzalo\source\repos\Practica_Clase21_Api\Services\obj\Debug\netcoreapp3.1\Services.pdb
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\bin\Debug\netcoreapp3.1\Services.deps.json
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\bin\Debug\netcoreapp3.1\Services.dll
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\bin\Debug\netcoreapp3.1\Services.pdb
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\bin\Debug\netcoreapp3.1\Common.dll
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\bin\Debug\netcoreapp3.1\Model.dll
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\bin\Debug\netcoreapp3.1\Model.pdb
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\obj\Debug\netcoreapp3.1\Services.csprojAssemblyReference.cache
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\obj\Debug\netcoreapp3.1\Services.csproj.CoreCompileInputs.cache
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfoInputs.cache
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfo.cs
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\obj\Debug\netcoreapp3.1\Services.csproj.CopyComplete
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\obj\Debug\netcoreapp3.1\Services.dll
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Services\obj\Debug\netcoreapp3.1\Services.pdb

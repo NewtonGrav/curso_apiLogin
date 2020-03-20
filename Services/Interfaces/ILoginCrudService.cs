@@ -10,7 +10,7 @@ namespace Services.Interfaces
 	public interface ILoginCrudService
 	{
 		Task<User> Login(UserDTO queryUser);
-		Task<User> UpdatePassword(UpdateUserDTO userToUpdate);
+		Task<User> UpdatePassword(UserDTO userToUpdate);
 		Task<User> CreateUSer(UserDTO user);
 		Task<User> DeleteUser(UserDTO user);
 	}

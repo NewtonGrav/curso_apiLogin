@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f//Po9kJo3RAy+BAJd86vD6aLtQMo2XJYlt+hkCDHIRqqHS0gM09/0opMmbUPs1Nd20kYPmAvXK/Ol5wMRF2Dg==",
+  "dgSpecHash": "qNW6G03SEtCh+QHcFxMo3apxK231b6yCoRqY6GVrp4pI7Zw4p7fZfT2kbVKK1V5EksSRxp+skOje/GA4bXIdoQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gonzalo\\source\\repos\\Practica_Clase21_Api\\Model\\Model.csproj",
+  "projectFilePath": "C:\\Users\\Gonzalo\\Source\\Repos\\curso_apiRestFull\\Model\\Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

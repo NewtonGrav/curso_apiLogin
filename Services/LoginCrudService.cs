@@ -63,7 +63,7 @@ namespace Services
 			throw new NotImplementedException();
 		}
 
-		public async Task<User> UpdatePassword(UpdateUserDTO userToUpdate)
+		public async Task<User> UpdatePassword(UserDTO userToUpdate)
 		{
 			//var userUpdated = _myContext.Users.up
 

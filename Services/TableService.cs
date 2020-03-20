@@ -34,7 +34,13 @@ namespace Services
 
 		public async Task<Person> AddPerson(PersonDTO person)
 		{
-			throw new NotImplementedException();
+			Person newPerson = new Person() { FullName = person.FullName, Dni = person.Dni };
+
+			var state = await _myContext.Persons.AddAsync(newPerson);
+
+			_myContext.SaveChanges();
+			
+			return state.Entity;
 		}
 
 	}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AA1aWncINdpyd1njObZNgU2WCmUP+Mz6XyAIZJBm0pzEwMKv8uJ4CooJVO95SYJqoDNLXvaFYfnRacvEUYQtgQ==",
+  "dgSpecHash": "a6giL9zy11HLeK5pzEQ4LA//oTWh64tYGymDIk31B0s+pCMxszDXCTVr8E9bNPtXRE6FLlQK/NXSoyBPq+34dw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gonzalo\\source\\repos\\Practica_Clase21_Api\\Practica_Clase21_Api\\Practica_Clase21_Api.csproj",
+  "projectFilePath": "C:\\Users\\Gonzalo\\Source\\Repos\\curso_apiRestFull\\Practica_Clase21_Api\\Practica_Clase21_Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Gonzalo\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

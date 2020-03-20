@@ -10,6 +10,7 @@ namespace Model.Model
 	{
 		[MaxLength(8), Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public string Dni { get; set; }
+
 		[MaxLength(20)]
 		public string FullName { get; set; }
 	}
