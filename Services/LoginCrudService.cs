@@ -13,8 +13,7 @@ using System.Threading.Tasks;
 namespace Services
 {
 	/*
-	 ** Desde aca se hara:
-	 *	Todos readonly --> Para impedir modificaciones
+	 ** Atributos necesarios (Todos readonly --> Para impedir modificaciones)
 	 * - El acceso a datos utilizando mi Context del Model
 	 * - Realizar informes por consola con el Logger
 	 * 

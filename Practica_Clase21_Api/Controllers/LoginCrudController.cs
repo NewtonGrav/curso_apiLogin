@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Common.DTO;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Services;
 using Services.Interfaces;
 
 namespace Practica_Clase21_Api.Controllers
@@ -20,6 +16,7 @@ namespace Practica_Clase21_Api.Controllers
 
   [Route("api/LoginCrud")]
   [ApiController]
+  [EnableCors("_myPolicy_")]
   public class LoginCrudController : ControllerBase
   {
     private ILogger<LoginCrudController> _logger;
@@ -37,6 +34,7 @@ namespace Practica_Clase21_Api.Controllers
     public async Task<ActionResult> Login([FromBody] UserDTO user)
     {
       //No verifico si los datos enviados son nullos
+      //Del front, los atributos deben tener el MISMO nombre!!
       if (user == null || user.Password == null || user.UserName == null)
         return BadRequest("Verifique los datos a enviar.");
 

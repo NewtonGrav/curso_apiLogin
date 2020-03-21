@@ -4,6 +4,7 @@ using System.Linq;
 
 using System.Threading.Tasks;
 using Common.DTO;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Services.Interfaces;
@@ -12,6 +13,7 @@ namespace Practica_Clase21_Api.Controllers
 {
   [Route("api/Table")]
   [ApiController]
+  [EnableCors("_myPolicy_")]
   public class TableController : ControllerBase
   {
     private ILogger<TableController> _logger;

@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +12,9 @@ namespace Practica_Clase21_Api
 {
 	public class Startup
 	{
+		//Nombre de mi Politica de CORS
+		readonly string MyAllowSpecificOrigins = "_myPolicy_";
+
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
@@ -31,14 +29,24 @@ namespace Practica_Clase21_Api
 
 			//**** Mi confing ****
 			//CORS
-
+			services.AddCors(options => {
+				options.AddPolicy(MyAllowSpecificOrigins,
+					builder =>
+					{
+						builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+						//** Otras opciones
+						//builder.WithOrigins("https://localhost:44326");
+						//- .WithHeaders("application/json", "application/json; charset=utf-8", "content-type")
+						//- .WithMethods("GET","POST","PUT");
+					});
+			});
 
 			//Inyeccion de dependencia de los Service
 			services.AddScoped<ILoginCrudService, LoginCrudService>();
 			services.AddScoped<ITableService, TableService>();
 
 			//??
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+			//services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
 			//Obtener connectionString
 			string connectionString = this.Configuration.GetConnectionString("LocalHostDb");
@@ -47,8 +55,11 @@ namespace Practica_Clase21_Api
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env, MyContext context)
 		{
+			//Crea la BD si no esta creada, sino nada
+			context.Database.EnsureCreated();
+
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
@@ -58,12 +69,16 @@ namespace Practica_Clase21_Api
 
 			app.UseRouting();
 
+			//** Habilitar CORS
+			app.UseCors(MyAllowSpecificOrigins);
+
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllers();
 			});
+
 
 			//* Mis archivos
 
