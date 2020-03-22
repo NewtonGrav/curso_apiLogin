@@ -14,3 +14,11 @@ C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Common\obj\Debug\netcoreapp3.1\C
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Common\obj\Debug\netcoreapp3.1\Common.dll
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Common\obj\Debug\netcoreapp3.1\Common.pdb
+C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Common\bin\Debug\netcoreapp3.1\Common.deps.json
+C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Common\bin\Debug\netcoreapp3.1\Common.dll
+C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Common\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Common\obj\Debug\netcoreapp3.1\Common.csprojAssemblyReference.cache
+C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
+C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Common\obj\Debug\netcoreapp3.1\Common.dll
+C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Common\obj\Debug\netcoreapp3.1\Common.pdb

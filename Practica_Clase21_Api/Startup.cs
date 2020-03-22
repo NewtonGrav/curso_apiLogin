@@ -49,7 +49,8 @@ namespace Practica_Clase21_Api
 			//services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
 			//Obtener connectionString
-			string connectionString = this.Configuration.GetConnectionString("LocalHostDb");
+			//string connectionString = this.Configuration.GetConnectionString("LocalHostDb");
+			string connectionString = this.Configuration.GetConnectionString("notebookDb");
 			//Añadir Context y connectionString
 			services.AddDbContext<MyContext>(options => options.UseSqlServer(connectionString));
 		}

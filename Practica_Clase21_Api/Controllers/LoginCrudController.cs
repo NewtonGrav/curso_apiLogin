@@ -46,7 +46,19 @@ namespace Practica_Clase21_Api.Controllers
         return Ok(new ResultJson() { Message = userDb.DefaultPage });
     }
 
+    [HttpPost("CreateUser")]
+    public async  Task<ActionResult> CreateUser([FromBody] UserDTO newUser)
+    {
+      bool userAndPassEmpty = newUser.UserName == null || newUser.Password == null;
+      if (newUser == null || userAndPassEmpty || newUser.DefaultPage == null)
+        return BadRequest(new ResultJson() { Message = "Verificar los datos ingresados" });
 
-    //hacer Crear Usuario
+      int rowsAffected = await _loginCrudService.CreateUSer(newUser);
+
+      if (rowsAffected == 0)
+        return Unauthorized("El usuario no pudo ser creado");
+
+      return Ok(new ResultJson() { Message = $"Usuario {newUser.UserName} creado con exito"});
+    }
   }
 }

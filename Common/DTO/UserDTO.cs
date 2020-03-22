@@ -12,6 +12,11 @@ namespace Common.DTO
 		private DateTime _lastLoginDate;
 		private string _defaultPage;
 
+		public UserDTO()
+		{
+			_lastLoginDate = DateTime.Now;
+		}
+
 		public long Id { get => _id; set => _id = value; }
 		public string UserName { get => _userName; set => _userName = value; }
 		public string Password { get => _password; set => _password = value; }

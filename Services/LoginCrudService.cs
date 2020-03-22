@@ -57,9 +57,21 @@ namespace Services
 			return null;
 		}
 
-		public Task<User> CreateUSer(UserDTO user)
+		public async Task<int> CreateUSer(UserDTO newUser)
 		{
-			throw new NotImplementedException();
+			var createdUser = await _myContext.AddAsync(new User() { 
+				UserName = newUser.UserName, 
+				Password = newUser.Password, 
+				LastLoginDate = newUser.LastLoginDate,
+				DefaultPage = newUser.DefaultPage
+			});
+
+			var rowsAffected = await _myContext.SaveChangesAsync();
+
+			if (rowsAffected != 0)
+				_logger.LogInformation($"Se creo creo el usuario: {createdUser.Entity.UserName}");
+
+			return rowsAffected;
 		}
 
 		public async Task<User> UpdatePassword(UserDTO userToUpdate)
