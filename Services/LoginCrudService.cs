@@ -41,7 +41,6 @@ namespace Services
 		{
 			//**** Realizar la consulta con EF ****
 
-			//Find: Busca registro por ID (Se utiliza Linq)
 			var queryUser = await _myContext.Users.Where(u => u.UserName == user.UserName).FirstOrDefaultAsync();
 
 			if (queryUser == null)
@@ -80,9 +79,18 @@ namespace Services
 			return state.Entity;
 		}
 
-		public async Task<User> UpdatePassword(UserDTO userToUpdate)
+		public async Task<User> UpdatePassword(UserUpdateDTO userToUpdated)
 		{
-			throw new NotImplementedException();
+			var userExist = await _myContext.Users.Where(
+				u => u.UserName == userToUpdated.User.UserName && u.Password == userToUpdated.User.Password
+				).FirstOrDefaultAsync();
+
+			if (userExist == null) return null;
+
+			userExist.Password = userToUpdated.NewPassword;
+			await _myContext.SaveChangesAsync();
+
+			return userExist;
 		}
 
 		public async Task<User> DeleteUser(UserDTO user)
