@@ -11,7 +11,7 @@ namespace Services.Interfaces
 	{
 		Task<User> Login(UserDTO queryUser);
 		Task<User> UpdatePassword(UserDTO userToUpdate);
-		Task<int> CreateUSer(UserDTO user);
+		Task<User> CreateUSer(UserDTO user);
 		Task<User> DeleteUser(UserDTO user);
 	}
 }

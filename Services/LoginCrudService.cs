@@ -82,8 +82,6 @@ namespace Services
 
 		public async Task<User> UpdatePassword(UserDTO userToUpdate)
 		{
-			//var userUpdated = _myContext.Users.up
-
 			throw new NotImplementedException();
 		}
 
@@ -91,5 +89,6 @@ namespace Services
 		{
 			throw new NotImplementedException();
 		}
+
 	}
 }
