@@ -44,6 +44,9 @@ namespace Services
 			//Find: Busca registro por ID (Se utiliza Linq)
 			var queryUser = await _myContext.Users.Where(u => u.UserName == user.UserName).FirstOrDefaultAsync();
 
+			if (queryUser == null)
+				return null;
+
 			if (queryUser.UserName != null && queryUser.Password == user.Password)
 			{
 				queryUser.LastLoginDate = DateTime.Now;
@@ -57,9 +60,24 @@ namespace Services
 			return null;
 		}
 
-		public Task<User> CreateUSer(UserDTO user)
+		public async Task<User> CreateUSer(UserDTO user)
 		{
-			throw new NotImplementedException();
+			//Verificar si existe el usuario
+			var userExist = await _myContext.Users.Where(u => u.UserName == user.UserName).FirstOrDefaultAsync();
+
+			if (userExist != null)
+				return null;
+
+			var state = await _myContext.Users.AddAsync(new User() {
+				UserName = user.UserName, 
+				Password = user.Password, 
+				LastLoginDate = DateTime.Now,
+				DefaultPage = user.DefaultPage
+			});
+
+			await _myContext.SaveChangesAsync();
+
+			return state.Entity;
 		}
 
 		public async Task<User> UpdatePassword(UserDTO userToUpdate)

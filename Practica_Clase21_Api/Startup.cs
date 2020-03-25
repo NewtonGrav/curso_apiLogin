@@ -27,7 +27,7 @@ namespace Practica_Clase21_Api
 		{
 			services.AddControllers();
 
-			//**** Mi confing ****
+			//**** Mi config ****
 			//CORS
 			services.AddCors(options => {
 				options.AddPolicy(MyAllowSpecificOrigins,
@@ -35,7 +35,7 @@ namespace Practica_Clase21_Api
 					{
 						builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
 						//** Otras opciones
-						//builder.WithOrigins("https://localhost:44326");
+						//- builder.WithOrigins("https://localhost:44326");
 						//- .WithHeaders("application/json", "application/json; charset=utf-8", "content-type")
 						//- .WithMethods("GET","POST","PUT");
 					});
@@ -44,9 +44,6 @@ namespace Practica_Clase21_Api
 			//Inyeccion de dependencia de los Service
 			services.AddScoped<ILoginCrudService, LoginCrudService>();
 			services.AddScoped<ITableService, TableService>();
-
-			//??
-			//services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
 			//Obtener connectionString
 			string connectionString = this.Configuration.GetConnectionString("LocalHostDb");
