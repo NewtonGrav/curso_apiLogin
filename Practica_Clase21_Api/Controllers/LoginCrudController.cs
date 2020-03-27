@@ -12,7 +12,6 @@ namespace Practica_Clase21_Api.Controllers
    * Implementar: (Inyeccion de dependencia)
    * - Logger
    * - Servicios a utilizar
-   * 
    * **/
 
 	[Route("api/LoginCrud")]
@@ -34,8 +33,6 @@ namespace Practica_Clase21_Api.Controllers
 		[HttpPost("Login")]
 		public async Task<ActionResult> Login([FromBody] UserDTO user)
 		{
-			//No verifico si los datos enviados son nullos
-			//Del front, los atributos deben tener el MISMO nombre!!
 			bool algunCampoRequeridoInvalido = user == null || user.Password == null || user.UserName == null;
 			if (algunCampoRequeridoInvalido)
 				return BadRequest("Verifique los datos a enviar.");

@@ -7,7 +7,6 @@ using System.Linq;
 namespace Model.Context
 {
 	/*
-	 * Contendra:
 	 * - ConnectionString 
 	 * - Tablas a mapear
 	 * **/

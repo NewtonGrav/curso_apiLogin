@@ -1,6 +1,5 @@
 ﻿using Common.DTO;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 using Model.Context;
 using Model.Model;
@@ -40,7 +39,7 @@ namespace Services
 				_myContext.SaveChanges();
 			} catch(Exception e)
 			{
-				_logger.LogWarning("Date: " + DateTime.Now + "La Persona ingresada ya existe");
+				_logger.LogWarning($"Error: {e.InnerException.Message}\nDate: {DateTime.Now} ");
 				return null;
 			}
 

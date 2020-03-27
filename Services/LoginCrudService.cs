@@ -5,9 +5,7 @@ using Model.Context;
 using Model.Model;
 using Services.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Services
@@ -18,8 +16,6 @@ namespace Services
 	 * - Realizar informes por consola con el Logger
 	 * 
 	 ** El contructor utilizara la inyeccion de dependencias para ambos
-	 * 
-	 ** Los metodos devuelven los Models utilizados
 	 * 
 	 * **/
 
@@ -39,9 +35,9 @@ namespace Services
 
 		public async Task<User> Login(UserDTO user)
 		{
-			//**** Realizar la consulta con EF ****
-
-			var queryUser = await _myContext.Users.Where(u => u.UserName == user.UserName).FirstOrDefaultAsync();
+			var queryUser = await _myContext.Users
+				.Where(u => u.UserName == user.UserName)
+				.FirstOrDefaultAsync();
 
 			if (queryUser == null)
 				return null;
@@ -61,11 +57,16 @@ namespace Services
 
 		public async Task<User> CreateUSer(UserDTO user)
 		{
-			//Verificar si existe el usuario
-			var userExist = await _myContext.Users.Where(u => u.UserName == user.UserName).FirstOrDefaultAsync();
+			var userExist = await _myContext.Users
+				.Where(u => u.UserName == user.UserName)
+				.FirstOrDefaultAsync();
 
 			if (userExist != null)
+			{
+				_logger.LogWarning($"Error: El usuario ya existe" +
+													$"\nDate: {DateTime.Now} ");
 				return null;
+			}
 
 			var state = await _myContext.Users.AddAsync(new User() {
 				UserName = user.UserName, 
@@ -85,7 +86,12 @@ namespace Services
 				u => u.UserName == userToUpdated.User.UserName && u.Password == userToUpdated.User.Password
 				).FirstOrDefaultAsync();
 
-			if (userExist == null) return null;
+			if (userExist == null)
+			{
+				_logger.LogWarning($"Error: No se cambio ninguna contraseña. El usuario no existe" +
+													$"\nDate: {DateTime.Now} ");
+				return null;
+			}
 
 			userExist.Password = userToUpdated.NewPassword;
 			await _myContext.SaveChangesAsync();
@@ -93,10 +99,6 @@ namespace Services
 			return userExist;
 		}
 
-		public async Task<User> DeleteUser(UserDTO user)
-		{
-			throw new NotImplementedException();
-		}
 
 	}
 }

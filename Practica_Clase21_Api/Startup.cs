@@ -68,7 +68,7 @@ namespace Practica_Clase21_Api
 
 			app.UseRouting();
 
-			//** Habilitar CORS
+			// Habilitar CORS
 			app.UseCors(MyAllowSpecificOrigins);
 
 			app.UseAuthorization();

@@ -1,8 +1,5 @@
 ﻿using Common.DTO;
 using Model.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Services.Interfaces
@@ -12,6 +9,5 @@ namespace Services.Interfaces
 		Task<User> Login(UserDTO queryUser);
 		Task<User> UpdatePassword(UserUpdateDTO userToUpdated);
 		Task<User> CreateUSer(UserDTO user);
-		Task<User> DeleteUser(UserDTO user);
 	}
 }
