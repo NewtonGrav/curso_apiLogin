@@ -56,7 +56,9 @@ namespace Practica_Clase21_Api.Controllers
     public async Task<ActionResult> DeletePerson(string dniPerson)
     {
       if (dniPerson == null || dniPerson == "")
-        return BadRequest(new ResultJson() { Message = "No se detecto la persona a eliminar" });
+        return BadRequest(new ResultJson() { 
+          Message = "No se detecto la persona a eliminar" 
+        });
 
       int rowsAffected = await _tableService.DeletePerson(dniPerson);
 
@@ -66,7 +68,7 @@ namespace Practica_Clase21_Api.Controllers
         });
 
       return Ok(new ResultJson() {
-        Message = $"La persona con Dni: {dniPerson} se elimino con exito."
+        Message = $"La persona con DNI {dniPerson} se a eliminado."
       });
     }
   }
