@@ -41,13 +41,13 @@ namespace Practica_Clase21_Api.Controllers
     [HttpPut("AddPerson")]
     public async Task<ActionResult> AddPerson([FromBody] PersonDTO person)
     {
-      if (person.FullName != "" || person.Dni != "")
+      if (person.FullName == "" || person.Dni == "")
         return BadRequest("Verifique los datos a enviar");
 
       var personAdded = await _tableService.AddPerson(person);
 
       if (personAdded == null)
-        return Unauthorized("No pudo crearse el usuario");
+        return Unauthorized("El usuario ya existe");
 
       return Ok(personAdded);
     }

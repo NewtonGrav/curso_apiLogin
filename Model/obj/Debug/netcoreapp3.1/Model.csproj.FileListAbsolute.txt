@@ -14,7 +14,6 @@ C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\bin\Debug\netcoreapp3.1\Mo
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\bin\Debug\netcoreapp3.1\Model.runtimeconfig.dev.json
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\bin\Debug\netcoreapp3.1\Model.dll
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\bin\Debug\netcoreapp3.1\Model.pdb
-C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.dll
@@ -30,3 +29,5 @@ C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreap
 C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
 C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.dll
 C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.pdb
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
+C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache

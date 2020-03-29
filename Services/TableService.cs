@@ -6,8 +6,6 @@ using Model.Model;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Services
@@ -21,7 +19,6 @@ namespace Services
 		{
 			_logger = logger;
 			_myContext = myContext;
-
 			_logger.LogInformation("Contructor TableService");
 		}
 
@@ -36,11 +33,17 @@ namespace Services
 		{
 			Person newPerson = new Person() { FullName = person.FullName, Dni = person.Dni };
 
-			var state = await _myContext.Persons.AddAsync(newPerson);
+			try
+			{
+				var state = await _myContext.Persons.AddAsync(newPerson);
+				_myContext.SaveChanges();
+			} catch(Exception e)
+			{
+				_logger.LogWarning($"Error: {e.InnerException.Message}\nDate: {DateTime.Now} ");
+				return null;
+			}
 
-			_myContext.SaveChanges();
-			
-			return state.Entity;
+			return newPerson;
 		}
 
 		public async Task<int> DeletePerson(string dniPerson)

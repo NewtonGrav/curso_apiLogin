@@ -5,9 +5,7 @@ using Model.Context;
 using Model.Model;
 using Services.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Services
@@ -18,8 +16,6 @@ namespace Services
 	 * - Realizar informes por consola con el Logger
 	 * 
 	 ** El contructor utilizara la inyeccion de dependencias para ambos
-	 * 
-	 ** Los metodos devuelven los Models utilizados
 	 * 
 	 * **/
 
@@ -39,10 +35,12 @@ namespace Services
 
 		public async Task<User> Login(UserDTO user)
 		{
-			//**** Realizar la consulta con EF ****
+			var queryUser = await _myContext.Users
+				.Where(u => u.UserName == user.UserName)
+				.FirstOrDefaultAsync();
 
-			//Find: Busca registro por ID (Se utiliza Linq)
-			var queryUser = await _myContext.Users.Where(u => u.UserName == user.UserName).FirstOrDefaultAsync();
+			if (queryUser == null)
+				return null;
 
 			if (queryUser.UserName != null && queryUser.Password == user.Password)
 			{
@@ -57,33 +55,50 @@ namespace Services
 			return null;
 		}
 
-		public async Task<int> CreateUSer(UserDTO newUser)
+		public async Task<User> CreateUSer(UserDTO user)
 		{
-			var createdUser = await _myContext.AddAsync(new User() { 
-				UserName = newUser.UserName, 
-				Password = newUser.Password, 
-				LastLoginDate = newUser.LastLoginDate,
-				DefaultPage = newUser.DefaultPage
+			var userExist = await _myContext.Users
+				.Where(u => u.UserName == user.UserName)
+				.FirstOrDefaultAsync();
+
+			if (userExist != null)
+			{
+				_logger.LogWarning($"Error: El usuario ya existe" +
+													$"\nDate: {DateTime.Now} ");
+				return null;
+			}
+
+			var state = await _myContext.Users.AddAsync(new User() {
+				UserName = user.UserName, 
+				Password = user.Password, 
+				LastLoginDate = DateTime.Now,
+				DefaultPage = user.DefaultPage
 			});
 
-			var rowsAffected = await _myContext.SaveChangesAsync();
+			await _myContext.SaveChangesAsync();
 
-			if (rowsAffected != 0)
-				_logger.LogInformation($"Se creo creo el usuario: {createdUser.Entity.UserName}");
-
-			return rowsAffected;
+			return state.Entity;
 		}
 
-		public async Task<User> UpdatePassword(UserDTO userToUpdate)
+		public async Task<User> UpdatePassword(UserUpdateDTO userToUpdated)
 		{
-			//var userUpdated = _myContext.Users.up
+			var userExist = await _myContext.Users.Where(
+				u => u.UserName == userToUpdated.User.UserName && u.Password == userToUpdated.User.Password
+				).FirstOrDefaultAsync();
 
-			throw new NotImplementedException();
+			if (userExist == null)
+			{
+				_logger.LogWarning($"Error: No se cambio ninguna contraseña. El usuario no existe" +
+													$"\nDate: {DateTime.Now} ");
+				return null;
+			}
+
+			userExist.Password = userToUpdated.NewPassword;
+			await _myContext.SaveChangesAsync();
+
+			return userExist;
 		}
 
-		public async Task<User> DeleteUser(UserDTO user)
-		{
-			throw new NotImplementedException();
-		}
+
 	}
 }
