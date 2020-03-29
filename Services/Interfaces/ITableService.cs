@@ -11,5 +11,6 @@ namespace Services.Interfaces
 	{
 		public Task<List<Person>> GetPersons();
 		public Task<Person> AddPerson(PersonDTO person);
+		public Task<int> DeletePerson(string dniPerson);
 	}
 }

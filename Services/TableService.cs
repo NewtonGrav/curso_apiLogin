@@ -43,5 +43,19 @@ namespace Services
 			return state.Entity;
 		}
 
+		public async Task<int> DeletePerson(string dniPerson)
+		{
+			var person = await _myContext.Persons
+				.Where((p) => p.Dni == dniPerson)
+				.FirstOrDefaultAsync();
+
+			if (person == null)
+				return 0;
+
+			_myContext.Persons.Remove(person);
+			int rowsAffected = await _myContext.SaveChangesAsync();
+
+			return rowsAffected;
+		}
 	}
 }
