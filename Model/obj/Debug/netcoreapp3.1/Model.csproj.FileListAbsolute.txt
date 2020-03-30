@@ -19,15 +19,5 @@ C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Mo
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.dll
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.pdb
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.genruntimeconfig.cache
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.deps.json
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.runtimeconfig.json
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.runtimeconfig.dev.json
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.dll
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\bin\Debug\netcoreapp3.1\Model.pdb
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.dll
-C:\Users\gonzalo-net\source\repos\Practica_Clase21_Api\Model\obj\Debug\netcoreapp3.1\Model.pdb
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
 C:\Users\Gonzalo\Source\Repos\curso_apiRestFull\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache

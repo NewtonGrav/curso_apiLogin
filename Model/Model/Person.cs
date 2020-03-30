@@ -8,10 +8,15 @@ namespace Model.Model
 {
 	public class Person
 	{
-		[MaxLength(8), Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public string Dni { get; set; }
+		[Key, DatabaseGenerated(DatabaseGeneratedOption.None), Column(TypeName = "bigint")]
+		public long DNI { get; set; }
 
-		[MaxLength(20)]
-		public string FullName { get; set; }
+		[MaxLength(50)]
+		[Required]
+		public string Name { get; set; }
+
+		[MaxLength(50)]
+		[Required]
+		public string SurName { get; set; }
 	}
 }

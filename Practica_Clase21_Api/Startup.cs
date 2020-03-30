@@ -13,7 +13,7 @@ namespace Practica_Clase21_Api
 	public class Startup
 	{
 		//Nombre de mi Politica de CORS
-		readonly string MyAllowSpecificOrigins = "_myPolicy_";
+		private readonly string MyAllowSpecificOrigins = "_myPolicy_";
 
 		public Startup(IConfiguration configuration)
 		{
@@ -41,9 +41,8 @@ namespace Practica_Clase21_Api
 					});
 			});
 
-			//Inyeccion de dependencia de los Service
+			//Service
 			services.AddScoped<ILoginCrudService, LoginCrudService>();
-			services.AddScoped<ITableService, TableService>();
 
 			//Obtener connectionString
 			//string connectionString = this.Configuration.GetConnectionString("LocalHostDb");
@@ -77,7 +76,6 @@ namespace Practica_Clase21_Api
 			{
 				endpoints.MapControllers();
 			});
-
 
 			//* Mis archivos
 

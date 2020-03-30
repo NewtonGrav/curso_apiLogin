@@ -7,9 +7,11 @@ namespace Common.DTO
 	public class PersonDTO
 	{
 		private string _dni;
-		private string _fullName;
+		private string _name;
+		private string _surName;
 
 		public string Dni { get => _dni; set => _dni = value; }
-		public string FullName { get => _fullName; set => _fullName = value; }
+		public string Name { get => _name; set => _name = value; }
+		public string SurName { get => _surName; set => _surName = value; }
 	}
 }
