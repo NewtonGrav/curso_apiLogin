@@ -40,7 +40,7 @@ namespace Practica_Clase21_Api.Controllers
 			var userDb = await _loginCrudService.Login(user);
 
 			if (userDb == null)
-				return Unauthorized(new ResultJson() { Message = "Usuario y/o contraseña invalido/s" });
+				return BadRequest(new ResultJson() { Message = "Usuario y/o contraseña invalido/s" });
 			else
 				return Ok(new ResultJson() { Message = userDb.DefaultPage });
 		}
@@ -56,8 +56,10 @@ namespace Practica_Clase21_Api.Controllers
 
 			var userDb = await _loginCrudService.CreateUSer(user);
 
-			if (userDb == null)
-				return Unauthorized(new ResultJson() { Message = $"El usuario \"{user.UserName}\" ya existe." });
+			if (userDb.Id == -1)
+				return Conflict(new ResultJson() { 
+					Message = $"El usuario \"{user.UserName}\" ya existe." 
+				});
 
 			return Ok(new ResultJson() { Message = "Usuario creado con exito :)" });
 		}
@@ -73,17 +75,18 @@ namespace Practica_Clase21_Api.Controllers
 
 			bool esMismaContrasenia = userToUpdated.User.Password.Equals(userToUpdated.NewPassword);
 			if (esMismaContrasenia)
-				return BadRequest(new ResultJson() { Message = "La nueva contraseña no puede ser igual a la actual" });
+				return BadRequest(new ResultJson() { 
+					Message = "La nueva contraseña no puede ser igual a la actual" 
+				});
 
 			var userDb = await _loginCrudService.UpdatePassword(userToUpdated);
 
-			if (userDb == null)
-				return Unauthorized(new ResultJson() { 
-					Message = $"No pudo cambiarse la contraseña.\n" +
-										$"El usuario no existe o la contraeña no corresponde al mismo" 
+			if (userDb.Id == -1)
+				return BadRequest(new ResultJson() { 
+					Message = $"No pudo cambiarse la contraseña. El usuario no existe." 
 				});
 
-			return Ok(new ResultJson() { Message = "Cambio de contraeña realizado :)" });
+			return Ok(new ResultJson() { Message = "Cambio de contraeña realizado." });
 		}
 
 	}

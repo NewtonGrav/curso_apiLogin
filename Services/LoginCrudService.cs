@@ -62,11 +62,7 @@ namespace Services
 				.FirstOrDefaultAsync();
 
 			if (userExist != null)
-			{
-				_logger.LogWarning($"Error: El usuario ya existe" +
-													$"\nDate: {DateTime.Now} ");
-				return null;
-			}
+				return new User() {	Id = -1 };
 
 			var state = await _myContext.Users.AddAsync(new User() {
 				UserName = user.UserName, 
@@ -87,11 +83,7 @@ namespace Services
 				).FirstOrDefaultAsync();
 
 			if (userExist == null)
-			{
-				_logger.LogWarning($"Error: No se cambio ninguna contraseña. El usuario no existe" +
-													$"\nDate: {DateTime.Now} ");
-				return null;
-			}
+				return new User() { Id = -1 };
 
 			userExist.Password = userToUpdated.NewPassword;
 			await _myContext.SaveChangesAsync();
