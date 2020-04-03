@@ -45,6 +45,10 @@ namespace Services
 			if (queryUser.UserName != null && queryUser.Password == user.Password)
 			{
 				queryUser.LastLoginDate = DateTime.Now;
+
+				Guid guid = Guid.NewGuid();
+				queryUser.Guid = guid.ToString();
+
 				await _myContext.SaveChangesAsync();
 
 				_logger.LogInformation("Se realizo login. Se actualizo la fecha de ultimo logeo");

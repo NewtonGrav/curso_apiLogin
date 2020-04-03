@@ -42,7 +42,7 @@ namespace Practica_Clase21_Api.Controllers
 			if (userDb == null)
 				return BadRequest(new ResultJson() { Message = "Usuario y/o contraseña invalido/s" });
 			else
-				return Ok(new ResultJson() { Message = userDb.DefaultPage });
+				return Ok(new ResultJson() { Message = userDb.DefaultPage, Guid = userDb.Guid });
 		}
 
 		[HttpPost("CreateUser")]

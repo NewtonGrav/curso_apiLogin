@@ -45,11 +45,11 @@ namespace Practica_Clase21_Api
 			services.AddScoped<ILoginCrudService, LoginCrudService>();
 
 			//Obtener connectionString
-			//string connectionString = this.Configuration.GetConnectionString("LocalHostDb");
-			string connectionString = this.Configuration.GetConnectionString("notebookDb");
+			string connectionStringNotebook = this.Configuration.GetConnectionString("notebookDb");
+			string connectionStringPc = this.Configuration.GetConnectionString("LocalHostDb");
 
 			//Añadir Context y connectionString
-			services.AddDbContext<MyContext>(options => options.UseSqlServer(connectionString));
+			services.AddDbContext<MyContext>(options => options.UseSqlServer(connectionStringPc));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

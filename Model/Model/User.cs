@@ -30,5 +30,8 @@ namespace Model.Model
 		[MaxLength(50)]
 		[Required]
 		public string DefaultPage { get; set; }
+
+		[Required]
+		public string Guid { get; set; }
 	}
 }
