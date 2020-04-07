@@ -4996,19 +4996,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gonzalo-net\\.nuget\\packages\\": {}
+    "C:\\Users\\Gonzalo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gonzalo-net\\source\\repos\\Practica_Clase21_Api\\Model\\Model.csproj",
+      "projectUniqueName": "C:\\Users\\Gonzalo\\source\\repos\\Practica_Clase21_Api\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "C:\\Users\\gonzalo-net\\source\\repos\\Practica_Clase21_Api\\Model\\Model.csproj",
-      "packagesPath": "C:\\Users\\gonzalo-net\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gonzalo-net\\source\\repos\\Practica_Clase21_Api\\Model\\obj\\",
+      "projectPath": "C:\\Users\\Gonzalo\\source\\repos\\Practica_Clase21_Api\\Model\\Model.csproj",
+      "packagesPath": "C:\\Users\\Gonzalo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gonzalo\\source\\repos\\Practica_Clase21_Api\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gonzalo-net\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gonzalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5062,7 +5062,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -89,5 +89,18 @@ namespace Practica_Clase21_Api.Controllers
 			return Ok(new ResultJson() { Message = "Cambio de contraeña realizado." });
 		}
 
+		[HttpGet("GetUser")]
+		public async Task<ActionResult> GetUser(string guid)
+		{
+			if (guid == "" || guid == null)
+				return BadRequest("No se proporciono un token");
+
+			var user = await _loginCrudService.GetUser(guid);
+
+			if (user == null)
+				return NotFound("No pudo obtener el usuario");
+
+			return Ok(user);
+		}
 	}
 }
