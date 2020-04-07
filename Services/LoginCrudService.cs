@@ -95,6 +95,11 @@ namespace Services
 			return userExist;
 		}
 
+		public async Task<User> GetUser(string guid)
+		{
+			var user = await _myContext.Users.Where(u => u.Guid == guid).FirstOrDefaultAsync();
 
+			return user;
+		}
 	}
 }

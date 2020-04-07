@@ -9,5 +9,6 @@ namespace Services.Interfaces
 		Task<User> Login(UserDTO queryUser);
 		Task<User> UpdatePassword(UserUpdateDTO userToUpdated);
 		Task<User> CreateUSer(UserDTO user);
+		Task<User> GetUser(string guid);
 	}
 }
